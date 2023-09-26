@@ -1,0 +1,314 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgb(47, 47, 47);
+}
+
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 2em 0 1em 0;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+img{
+    width: 23px;
+    margin: 0 10px 0 10px;
+}
+
+p{
+    font-size: 13px;
+}
+
+hr {
+    width: 350px;
+    margin-top: 1em;
+    background-color: rgb(211, 211, 211);
+    height: 1px;
+    border: 0;
+}
+
+html {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    flex-direction: column;
+}
+
+.boxesContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.wordBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.3em 0 0.3em 0;
+}
+
+.wordBoxAnimation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.3em 0 0.3em 0;
+    animation: earthquake 0.4s;
+}
+
+.box,
+#currentBox {
+    width: 60px;
+    height: 60px;
+    margin: 0 0.1em 0 0.1em;
+    border: 2px solid rgb(211, 211, 211);
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    font-weight: bold;
+    transition: transform 0.5s;
+}
+
+#currentBox {
+    border: 2px solid #90CAF9;
+}
+
+#boxAnimation{
+    animation: flip 0.6s ease-in-out;
+}
+
+.keyboardSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2em;
+}
+
+.keyboard {
+    display: flex;
+    margin-bottom: 0.4em;
+}
+
+.keyboardboxes {
+    width: 3em;
+    height: 3.7em;
+    background-color: #E2E8F0;
+    margin: 0 0.2em 0 0.2em;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.4s ease-out;
+}
+
+.keyboardboxes:hover,
+.enterbox:hover {
+    background-color: #9EA2A8;
+}
+
+.enterbox {
+    cursor: pointer;
+    width: 9.65em;
+    height: 3.7em;
+    background-color: #E2E8F0;
+    margin: 0 0.3em 0 0.3em;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+.notification {
+    position: absolute;
+    background-color: gray;
+    width: 250px;
+    height: 70px;
+    top: -75px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    border-radius: 5px;
+    font-weight: bold;
+    z-index: 10;
+    border: 0.5px solid white;
+}
+
+footer{
+    margin-top: 3em;
+}
+
+footer p{
+    font-weight: bold;
+}
+
+@keyframes firstJump {
+    from{scale: 0; }
+
+    to{scale: 1.1;}
+}
+
+@keyframes show {
+    from{top: -75px; }
+
+    to{top: 30%;}
+}
+
+@keyframes hide {
+    from{top: 30%;}
+
+    to{top: -75px;}
+}
+
+@keyframes earthquake {
+    0%{transform: translateX(0px);}
+    15%{transform: translateX(5px);}
+    30%{transform: translateX(-5px);}
+    45%{transform: translateX(5px);}
+    60%{transform: translateX(-5px);}
+    75%{transform: translateX(5px);}
+    90%{transform: translateX(-5px);}
+    100%{transform: translateX(0px);}
+}
+
+@keyframes flip {
+    from {
+        transform: rotateX(0deg)
+    }
+
+    50% {
+        transform: rotateX(90deg)
+    }
+
+    to {
+        transform: rotateX(0deg)
+    }
+}
+
+@media only screen and (max-width:600px) {
+    h1{
+        font-size: 27px;
+    }
+
+    img{
+        width: 17px;
+    }
+
+    .keyboardboxes {
+        width: 2.2em;
+        height: 3em;
+        margin: 2px;
+    }
+
+    .enterbox {
+        margin: 2px;
+        width: 7.35em;
+        height: 3em;
+    }
+
+    .box,
+    #currentBox {
+        width: 40px;
+        height: 40px;
+        margin: 0 0.1em 0 0.1em;
+        border: 2px solid rgb(211, 211, 211);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    #currentBox {
+        border: 2px solid #90CAF9;
+    }
+
+    .boxAnimation{
+        width: 40px;
+        height: 40px;
+        margin: 0 0.1em 0 0.1em;
+        border: 2px solid rgb(211, 211, 211);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        transition: transform 0.5s;
+        animation: flip 0.4s;
+    }
+}
+
+@media only screen and (max-height:800px) {
+    h1{
+        font-size: 27px;
+    }
+
+    img{
+        width: 17px;
+    }
+
+    .keyboardboxes {
+        width: 2.2em;
+        height: 3em;
+        margin: 2px;
+    }
+
+    .enterbox {
+        margin: 2px;
+        width: 7.35em;
+        height: 3em;
+    }
+
+    .box,
+    #currentBox {
+        width: 40px;
+        height: 40px;
+        margin: 0 0.1em 0 0.1em;
+        border: 2px solid rgb(211, 211, 211);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    #currentBox {
+        border: 2px solid #90CAF9;
+    }
+
+    .boxAnimation{
+        width: 40px;
+        height: 40px;
+        margin: 0 0.1em 0 0.1em;
+        border: 2px solid rgb(211, 211, 211);
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+        transition: transform 0.5s;
+        animation: flip 0.4s;
+    }
+}
